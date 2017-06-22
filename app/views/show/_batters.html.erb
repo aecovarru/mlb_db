@@ -1,0 +1,20 @@
+<table class="table table-bordered table-hover">
+  <caption><%= "#{team.name} Batter Stats" %></caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <% 2.times do%>
+        <%= render partial: "batter_header" %>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% batters.each do |batter| %>
+      <tr>
+        <td><%= batter.player.name %></td>
+        <%= render partial: "batter_row", locals: { stat: batter.lefty } %>
+        <%= render partial: "batter_row", locals: { stat: batter.righty } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

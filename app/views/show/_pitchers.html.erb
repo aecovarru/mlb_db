@@ -1,0 +1,35 @@
+<table class="table table-bordered table-hover">
+  <caption><%= "#{team.name} Pitcher Stats" %></caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>LD LHB</th>
+      <th>LD RHB</th>
+      <th>WHIP LHB</th>
+      <th>WHIP RHB</th>
+      <th>IP LHB</th>
+      <th>IP RHB</th>
+      <th>SO LHB</th>
+      <th>SO RHB</th>
+      <th>BB LHB</th>
+      <th>BB RHB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% pitchers.each do |pitcher| %>
+      <% lefty = stat_proxy(pitcher.lefty) %>
+      <% righty = stat_proxy(pitcher.righty) %>
+      <td><%= pitcher.player.name %></td>
+      <td><%= lefty.ld %></td>
+      <td><%= righty.ld %></td>
+      <td><%= lefty.whip %></td>
+      <td><%= righty.whip %></td>
+      <td><%= lefty.ip %></td>
+      <td><%= righty.ip %></td>
+      <td><%= lefty.so %></td>
+      <td><%= righty.so %></td>
+      <td><%= lefty.bb %></td>
+      <td><%= righty.bb %></td>
+    <% end %>
+  </tbody>
+</table>

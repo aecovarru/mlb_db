@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <h1>Home</h1>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tbody>
+        <tr><td><%= link_to "Yesterday", action: "games", id: @yesterday.id %></td></tr>
+        <tr><td><%= link_to "Today", action: "games", id: @today.id %></td></tr>
+        <tr><td><%= link_to "Tomorrow", action: "games", id: @tomorrow.id %></td></tr>
+      </tbody>
+  </div>
+</div>

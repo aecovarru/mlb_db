@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <h1><%= "#{@game_date.date} Games" %></h1>
+    <h2>Away @ Home</h2>
+    <h3><%= link_to "Home", controller: "index", action: "home" %></h3>
+  </div>
+  <div class="row">
+    <table class="table">
+    <% @games.each do |game| %>
+      <tr><td><%= link_to "#{game.away_team.name} @ #{game.home_team.name}", controller: "show", action: "game", id: game.id %></td></tr>
+    <% end %>
+    </table>
+  </div>
+</div>

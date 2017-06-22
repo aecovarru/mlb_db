@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <h1><%= "#{@away_team.name} @ #{@home_team.name}" %></h1>
+  </div>
+  <div class="row">
+    <h2><%= link_to "Games", controller: "index", action: "games", id: @game.game_date.id %></h2>
+  </div>
+  <div class="row">
+    <%= render partial: "pitchers", locals: { pitchers: @away_pitchers, team: @away_team }  %>
+  </div>
+  <div class="row">
+    <%= render partial: "pitchers", locals: { pitchers: @home_pitchers, team: @home_team}  %>
+  </div>
+  <div class="row">
+    <%= render partial: "batters", locals: { batters: @away_batters, team: @away_team}  %>
+  </div>
+  <div class="row">
+    <%= render partial: "batters", locals: { batters: @home_batters, team: @home_team}  %>
+  </div>
+</div>

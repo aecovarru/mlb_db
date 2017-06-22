@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+module Builder
+  Seasons.create([2017])
+  season = Season.find_by_year(2017)
+  Players.create(season)
+  Games.create(season)
+  game_date = GameDate.today
+  Stats.games(game_date)
+end
